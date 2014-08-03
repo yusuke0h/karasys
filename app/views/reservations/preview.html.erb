@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  function redirect() {
+    location.replace('<%= url_for reservations_path %>')
+  }
+</script>
+
+<%= @content %>
+<br>
+<%= @files[0] %>
+<br>
+<%= @infolist  %>
+
+<div id='console'>
+</div>
+
+<video height="600" src="/karadata/青葉りんご/Love Flower ／ 青葉りんご(Nico - sm15832696).mp4" width="800" controls="controls" preload="auto"
+  onended="redirect();">

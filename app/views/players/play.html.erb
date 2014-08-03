@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  function redirect() {
+    location.replace('<%= url_for players_done_path %>')
+  }
+</script>
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ファイル名</th>
+      <th>曲名</th>
+      <th>アーティスト</th>
+      <th>アルバム</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @now_reservation.song.name %></td>
+      <td><%= @now_reservation.song.title %></td>
+      <td><%= @now_reservation.song.artist %></td>
+      <td><%= @now_reservation.song.album %></td>
+    </tr>
+  </tbody>
+</table> -->
+<% if File.extname(@now_reservation.song.name) == ".mp4" %>
+  <video height="800" width="1200" src="<%= @now_reservation.song.path %>" controls="controls" preload="auto" autoplay="true"
+    onended="redirect();">
+<% elsif File.extname(@now_reservation.song.name) == ".mp3" %>
+  <audio src="<%= @now_reservation.song.path %>" controls="true" preload="auto" autoplay="true"
+    onended="redirect();">
+<% end %>
+

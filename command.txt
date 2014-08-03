@@ -1,0 +1,10 @@
+
+rails generate model song name:string path:string title:string artist:string album:string
+
+rails generate controller songs entry
+
+rails generate migration AddDetailsToReservations reproduced:boolean song_id:integer
+
+rails g controller players play interval
+
+rails generate migration AddOriginPathToSongs origin_path:string

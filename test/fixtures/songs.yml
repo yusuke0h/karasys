@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  path: MyString
+  title: MyString
+  artist: MyString
+  album: MyString
+  title: MyString
+
+two:
+  name: MyString
+  path: MyString
+  title: MyString
+  artist: MyString
+  album: MyString
+  title: MyString

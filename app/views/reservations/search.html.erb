@@ -1,0 +1,42 @@
+<h1>検索ページ</h1>
+<br>
+
+<div id="search_form_box">
+  <%= form_tag :reservations_search, :class => "form-search" ,method: :get do %>
+    <p><%= text_field_tag "q", params[:q], :placeholder => "曲名, アーティスト名, アルバム  etc..", :value => @query %>
+    <%= submit_tag "検索", :class => "btn" %></p>
+  <% end %>
+</div>
+
+<% if @songs.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ファイル名</th>
+        <th>曲名</th>
+        <th>アーティスト</th>
+        <th>アルバム</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @songs.each do |song| %>
+        <tr>
+          <td><%= song.name %></td>
+          <td><%= song.title %></td>
+          <td><%= song.artist %></td>
+          <td><%= song.album %></td>
+          <td>
+            <%= link_to '予約',
+              reservations_path(song),
+              method: :post,
+              data: { confirm: '予約しますか？' },
+              class: 'btn btn-success' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h4>ここに検索結果が表示されます</h4>
+<% end %>

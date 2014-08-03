@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  mnt = 3; // 何秒後に移動するか？
+  url = "<%= url_for players_play_path %>"; // 移動するアドレス
+  function jumpPage() {
+    location.href = url;
+  }
+  setTimeout("jumpPage()",mnt*1000)
+</script>
+
+<h1>Next Song!!</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>予約番号</th>
+      <th>ファイル名</th>
+      <th>曲名</th>
+      <th>アーティスト</th>
+      <th>アルバム</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @next_reservations.each_with_index do |reservations, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= reservations.song.name %></td>
+      <td><%= reservations.song.title %></td>
+      <td><%= reservations.song.artist %></td>
+      <td><%= reservations.song.album %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

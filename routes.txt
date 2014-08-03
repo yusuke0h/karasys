@@ -1,0 +1,14 @@
+        players_play GET    /players/play(.:format)          players#play
+    players_interval GET    /players/interval(.:format)      players#interval
+        players_done GET    /players/done(.:format)          players#done
+         songs_entry GET    /songs/entry(.:format)           songs#entry
+         songs_index GET    /songs/index(.:format)           songs#index
+reservations_preview        /reservations/preview(.:format)  reservations#preview
+ reservations_search        /reservations/search(.:format)   reservations#search
+        reservations GET    /reservations(.:format)          reservations#index
+                     POST   /reservations(.:format)          reservations#create
+     new_reservation GET    /reservations/new(.:format)      reservations#new
+    edit_reservation GET    /reservations/:id/edit(.:format) reservations#edit
+         reservation GET    /reservations/:id(.:format)      reservations#show
+                     PUT    /reservations/:id(.:format)      reservations#update
+                     DELETE /reservations/:id(.:format)      reservations#destroy
